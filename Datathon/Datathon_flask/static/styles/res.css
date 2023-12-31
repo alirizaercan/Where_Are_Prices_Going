@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/*
+@media (max-width: 1600px){
+
+    .home .main .r_side img{
+
+        display: none;
+    }
+
+}
+*/
+
+@media (max-width: 670px){
+
+    .home .main .r_side img{
+
+        display: none;
+    }
+
+    .header .logo{
+        display: none;
+    }
+
+    .header {
+        height:60px;
+} 
+
+}
+/*ALLAH'IN BELASI CALISMADIGI ICIN BURAYA ATTIM ALLAH AFFETSIN*/
+

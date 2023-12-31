@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" type="image/png" href="dosya.png"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+  <!-- Font Awesome Icons Lib-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+
+  <title>Sebzeler</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/res.css') }}">
+</head>
+
+<body>
+  <header class="header">
+
+    <a href="#home" class="logo">
+      <img src="{{ url_for('static', filename='images/konya_logo.png') }}" alt="logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="{{ url_for('index') }}">Ana Sayfa</a>
+      <div class="vertical-line"></div>
+      <a href="{{ url_for('meyve') }}">Meyve</a>
+      <div class="vertical-line"></div>
+      <a href="{{ url_for('sebze') }}">Sebze</a>
+    </nav>
+
+  </header>
+  <!--! header section end  -->
+
+
+  <section class="durak">
+
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/potato.png') }}" alt="banana_logo" width="300px">
+        <h2>PATATES</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/potato.png') }}" alt="banana_logo" width="300px">
+          <h2>PATATES</h2>
+          <a>{{ actual_values_dict["PATATES"] }}</a>
+          <a>{{ predictions_dict["PATATES"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/eggplant.png') }}" alt="apple" width="300px" class="centered">
+        <h2>PATLICAN</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/eggplant.png') }}" alt="apple_logo" width="300px" class="centered">
+          <h2>PATLICAN</h2>
+          <a>{{ actual_values_dict["PATLICAN (Kemer)"] }}</a>
+          <a>{{ predictions_dict["PATLICAN (Kemer)"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/papper.png') }}" alt="portakal_logo" width="300px" class="centered">
+        <h2>BİBER</h2>
+      </div>
+      <div class="card-back">
+        <img src="{{ url_for('static', filename='images/papper.png') }}" alt="portakal_logo" width="300px" class="centered">
+        <h2>BİBER</h2>
+          <a>{{ actual_values_dict["BİBER (Dolma)"] }}</a>
+          <a>{{ predictions_dict["BİBER (Dolma)"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/mushroom.png') }}" alt="kiwi_logo" width="300px" class="centered">
+        <h2>MANTAR</h2>
+      </div>
+      <div class="card-back">
+        <img src="{{ url_for('static', filename='images/mushroom.png') }}" alt="kiwi_logo" width="300px" class="centered">
+        <h2>MANTAR</h2>
+          <a>{{ actual_values_dict["MANTAR (Kültür)"] }}</a>
+          <a>{{ predictions_dict["MANTAR (Kültür)"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+          <img src="{{ url_for('static', filename='images/marul.png') }}" alt="banana_logo" width="300px">
+          <h2>MARUL</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/marul.png') }}" alt="banana_logo" width="300px">
+          <h2>MARUL</h2>
+
+          <a>{{ actual_values_dict["MARUL (Aysberk)Adet"] }}</a>
+          <a>{{ predictions_dict["MARUL (Aysberk)Adet"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+          <img src="{{ url_for('static', filename='images/freshbean.png') }}" alt="banana_logo" width="300px">
+          <h2>FASULYE</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/freshbean.png') }}" alt="banana_logo" width="300px">
+          <h2>FASULYE</h2>
+
+          <a>{{ actual_values_dict["FASULYE (Muhtelif)"] }}</a>
+          <a>{{ predictions_dict["FASULYE (Muhtelif)"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+          <img src="{{ url_for('static', filename='images/tomato.png') }}" alt="banana_logo" width="300px">
+          <h2>DOMATES</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/tomato.png') }}" alt="banana_logo" width="300px">
+          <h2>DOMATES</h2>
+          <a>{{ actual_values_dict["DOMATES (Muhtelif)"] }}</a>
+          <a>{{ predictions_dict["DOMATES (Muhtelif)"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+          <img src="{{ url_for('static', filename='images/spinach.png') }}" alt="banana_logo" width="300px">
+          <h2>ISPANAK</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/spinach.png') }}" alt="banana_logo" width="300px">
+          <h2>ISPANAK</h2>
+          <a>{{ actual_values_dict["ISPANAK"] }}</a>
+          <a>{{ predictions_dict["ISPANAK"] }}</a>
+          <a>{{ relevant_date }}</a>
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>

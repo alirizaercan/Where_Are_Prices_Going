@@ -1,0 +1,284 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+
+:root{
+    --main-color:rgba(219, 223, 7, 0.788);
+    --color-2:rgba(19, 18, 18, 0);
+    --border: 0.1rem solid rgba(255,255,255,0.3);
+}
+
+*{
+    font-family: "Poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+}
+
+
+html{
+
+    font-size: 62.5%;
+    overflow-x: hidden ;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+
+}
+
+body{
+    background-color: var(--main-color);
+    
+
+}
+
+
+section{
+
+    padding: 3.5rem 2%;
+}
+
+.logo img{
+
+        width: 7rem;
+
+    }
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    border-radius: 30rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: black;
+
+}
+
+/*! header start */
+
+
+        .header {
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 4%;
+                margin: 2rem 7%;
+                border-radius: 30rem;
+                box-shadow: 0px 0px 17px -2px rgba(0, 0, 0,0.75);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                height:80px;
+        }
+
+        .header .navbar {
+            display: flex;
+            align-items: center;
+          }
+
+        .header .navbar a{
+                justify-content: center;
+                margin: 0 3rem;
+
+                font-size: 1.6rem;
+
+                color: rgba(0, 0, 0,0.8)
+
+        }
+
+        .header .logo img{
+                height: 7rem;
+        }
+        .header .logo {
+            position:absolute;
+            left: 10px;
+          }
+
+
+/*! header end */
+
+
+/*! Durak  start*/
+
+
+                    .durak .durak_baslik{
+                        display: flex;
+                        align-items: center;
+                        
+                        text-transform: uppercase;
+                        font-size: 2rem;
+                        margin-bottom: 3.5rem;
+                        border-bottom: 0.1rem solid black;
+                    }
+
+                    .durak .durak_baslik img{
+                        width: 9rem;
+                        height: 9rem;
+                    }
+
+                    .durak .box-container{
+                            
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+                            gap: 1.5rem;
+
+                    }
+
+
+                    .durak .box-container .box{
+
+                            padding: 3rem;
+                            background-color: #fff;
+                            border-radius: 3rem;
+                            min-height: 60rem;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: space-between;
+                            align-items: center;
+
+                    }
+
+
+                    .durak .box-container .box img{
+
+                            
+                            width: 100%;
+                            object-fit: cover;
+                    }
+
+
+
+                    .durak .box-container .box .bus_info{
+                            padding-left: 10rem;
+                            font-size: 2rem;
+                    }
+
+                    .durak .box-container .box .bus_info span{
+
+                        color: green;
+
+                    }
+
+/*! Durak  end*/
+
+/*! Home start*/
+
+/*
+.home{
+
+    margin: 2rem 7%;
+    min-height: 100vh;
+    padding: 2%;
+}
+
+.home .main{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;  
+}
+
+.home .main .r_side img{
+
+    height: 700px;
+}
+
+.home .main .content{
+
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 3rem;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.alt_m{
+
+    text-align: center;
+}
+
+.home .main .content h3{
+    font-size: 30px;
+}
+
+
+/*
+
+
+
+
+
+/*
+.home{
+    margin: 2rem 7%;
+    min-height: 100vh;
+    padding: 2%;
+}
+
+.home .main{
+                            
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+
+}
+
+.home .main .content{
+    max-width: 60rem;
+}
+
+.home .main .content h3{
+    font-size: 6rem;
+}
+
+.home .main .content p{
+    font-size: large;
+}
+
+.home .content{
+
+    padding: 3rem;
+    background-color: #fff;
+    border-radius: 3rem;
+    min-height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+.home .main .content img{
+
+    width: 80%;
+
+}
+
+.home .main .r_side img{
+    height: 700px;
+}
+
+
+.alt_m{
+    text-align: center;
+}
+
+/*
+
+

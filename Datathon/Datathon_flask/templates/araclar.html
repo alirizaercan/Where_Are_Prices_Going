@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" type="image/png" href="dosya.png"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+  <!-- Font Awesome Icons Lib-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Meyveler</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/res.css') }}">
+</head>
+
+<body>
+<style>
+.box {
+    perspective: 1000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Kutunun yüksekliğini azaltın */
+    width: 400px;  /* Kutunun genişliğini azaltın */
+    margin: auto;
+}
+
+.box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.box:hover .box-inner {
+    transform: rotateY(180deg);
+}
+
+.box-front, .box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.box-back {
+    transform: rotateY(180deg);
+}
+
+.box-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Dikey olarak ortala */
+    align-items: center;     /* Yatay olarak ortala */
+    height: 100%;
+}
+
+.box-image {
+    max-width: 100%; /* Görüntüyü kutuya sığacak şekilde ayarlar */
+    max-height: 100%;
+}
+</style>
+  <!--! header section start  -->
+  <header class="header">
+
+    <a href="#home" class="logo">
+      <img src="{{ url_for('static', filename='images/konya_logo1.png') }}" alt="logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="{{ url_for('index') }}">Ana Sayfa</a>
+      <div class="vertical-line"></div>
+      <a href="{{ url_for('meyve') }}">Meyve</a>
+      <div class="vertical-line"></div>
+      <a href="{{ url_for('sebze') }}">Sebze</a>
+    </nav>
+
+  </header>
+  <!--! header section end  -->
+
+  <!--! Durak section start-->
+
+  <section class="durak">
+
+    <div class="durak_baslik">
+
+      <h1 class="stop_name"> Meyveler</h1>
+
+    </div>
+
+    <div class="box-container">
+        <div class="box box11">
+            <div class="box-inner">
+                <!-- Front side of the card -->
+                <div class="box-front">
+                    <div class="box-head">
+                        <h2>MUZ</h2>
+                        <img class="box-image" src="{{ url_for('static', filename='images/banana.png') }}" alt="banana_logo" width="300px">
+                    </div>
+                </div>
+                <!-- Back side of the card -->
+                <div class="box-back">
+                    <h1>{{ relevant_date }}</h1>
+                    <img class="box-image" src="{{ url_for('static', filename='images/banana.png') }}" alt="banana_logo" width="300px">
+                    <h2>{{ actual_values_dict["MUZ (Yerli)"] }}</h2>
+                    <h2>{{ predictions_dict["MUZ (Yerli)"] }}</h2>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="box box11">
+            <div class="box-inner">
+                <!-- Front side of the card -->
+                <div class="box-front">
+                    <div class="box-head">
+                        <h2>ELMA</h2>
+                        <img src="{{ url_for('static', filename='images/apple.png') }}" alt="apple" width="300px" class="centered">
+                    </div>
+                </div>
+                <!-- Back side of the card -->
+                <div class="box-back">
+                    <h1>{{ relevant_date }}</h1>
+                    <img class="box-image" src="{{ url_for('static', filename='images/apple.png') }}" alt="apple" width="300px">
+                    <h2>{{ actual_values_dict["ELMA (Golden)"] }}</h2>
+                    <h2>{{ predictions_dict["ELMA (Golden)"] }}</h2>
+  
+                </div>
+            </div>
+        </div>
+
+        <div class="box box11">
+            <div class="box-inner">
+                <!-- Front side of the card -->
+                <div class="box-front">
+                    <div class="box-head">
+                        <h2>ARMUT</h2>
+                        <img src="{{ url_for('static', filename='images/armut.png') }}" alt="armut" width="300px" class="centered">
+                    </div>
+                </div>
+                <!-- Back side of the card -->
+                <div class="box-back">
+                    <h1>{{ relevant_date }}</h1>
+                    <img class="box-image" src="{{ url_for('static', filename='images/armut.png') }}" alt="armut" width="300px">
+                    <h2>{{ actual_values_dict["ARMUT( Ankara )"] }}</h2>
+                    <h2>{{ predictions_dict["ARMUT( Ankara )"] }}</h2>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="box box11">
+            <div class="box-inner">
+                <!-- Front side of the card -->
+                <div class="box-front">
+                    <div class="box-head">
+                        <h2>GREYFURT</h2>
+                        <img src="{{ url_for('static', filename='images/greyfurt.png') }}" alt="greyfurt" width="300px" class="centered">
+                    </div>
+                </div>
+                <!-- Back side of the card -->
+                <div class="box-back">
+                    <h1>{{ relevant_date }}</h1>
+                    <img class="box-image" src="{{ url_for('static', filename='images/greyfurt.png') }}" alt="greyfurt" width="300px">
+                    <h2>{{ actual_values_dict["GREYFURT"] }}</h2>
+                    <h2>{{ predictions_dict["GREYFURT"] }}</h2>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  </section>
+
+  <!--! Durak section end-->
+
+  <!--easter egg-->
+
+</body>
+
+</html>

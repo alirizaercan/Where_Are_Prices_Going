@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" type="image/png" href="dosya.png"/>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meyveler</title>
+
+  <!-- Font Awesome Icons Lib-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/res.css') }}">
+
+</head>
+
+<body>
+  <header class="header">
+
+    <a href="#home" class="logo">
+      <img src="{{ url_for('static', filename='images/konya_logo.png') }}" alt="logo">
+    </a>
+
+    <nav class="navbar">
+      <a href="{{ url_for('index') }}">Ana Sayfa</a>
+      <div class="vertical-line"></div>
+      <a href="{{ url_for('meyve') }}">Meyve</a>
+      <div class="vertical-line"></div>
+      <a href="{{ url_for('sebze') }}">Sebze</a>
+    </nav>
+
+  </header>
+  <!--! header section end  -->
+
+
+  <section class="durak">
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/banana.png') }}" alt="banana_logo" width="300px">
+        <h2>MUZ(İTHAL)</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/banana.png') }}" alt="banana_logo" width="300px">
+          <h2>MUZ(İTHAL)</h2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/apple.png') }}" alt="apple" width="300px" class="centered">
+        <h2>ELMA</h2>
+      </div>
+      <div class="card-back">
+          <img src="{{ url_for('static', filename='images/apple.png') }}" alt="apple_logo" width="300px" class="centered">
+          <h2>ELMA</h2>
+      </div>
+    </div>    
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/portakal.png') }}" alt="portakal_logo" width="300px" class="centered">
+        <h2>PORTAKAL</h2>
+      </div>
+      <div class="card-back">
+        <img src="{{ url_for('static', filename='images/portakal.png') }}" alt="portakal_logo" width="300px" class="centered">
+        <h2>PORTAKAL</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-front">
+        <img src="{{ url_for('static', filename='images/kiwi.png') }}" alt="kiwi_logo" width="300px" class="centered">
+        <h2>KİVİ</h2>
+      </div>
+      <div class="card-back">
+        <img src="{{ url_for('static', filename='images/kiwi.png') }}" alt="kiwi_logo" width="300px" class="centered">
+        <h2>KİVİ</h2>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
